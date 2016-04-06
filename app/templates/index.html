@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+	{% block title %}{{ super() }} | {{ title }}{% endblock %}
+
+	{% block head_css %}
+		{{super()}}
+		<!-- External CSS files specific to this page can be referenced here -->
+		<link rel="stylesheet" type="text/css" href="/static/css/lib/vis.css">
+	{% endblock %}
+
+	{% block head_js %}
+		{{super()}}
+		<!-- External JS files specific to this page can be referenced here -->
+		<script type="text/javascript" src="/static/js/lib/vis.js"></script>
+	{% endblock %}
+	
+	{% block script %}
+		<script type="text/javascript">
+			var timelineArray = [];
+
+			{% for event in timelineJSON %}
+				timelineArray.push({{ event|safe }});
+				{% endfor %}
+
+			for (var i = 0; i < timelineArray.length; i++){
+				timelineArray[i].start = timelineArray[i].year + '-01-01';
+				timelineArray[i].end = timelineArray[i].year + '-12-31';
+				timelineArray[i].content = '' + timelineArray[i].deaths;
+			}
+
+		</script>
+	{% endblock %}
+
+{% endblock %}
+
+{% block content %}
+	<!-- super function renders HTML from base.html 
+		 that is within the content block. -->
+	{{ super() }}
+	<!-- end super -->
+
+	<div id="visualization"></div>
+
+	<script type="text/javascript" src="/static/js/timeline.js"></script>
+
+{% endblock %}
+	
+

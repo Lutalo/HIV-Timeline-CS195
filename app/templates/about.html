@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+	{% block title %}{{ super() }} | {{title}}{% endblock %}
+
+	{% block head_css %}
+		{{super()}}
+		{% endblock %}
+
+	{% block head_js %}
+		{{super()}}
+		{% endblock %}
+	
+	{% block script %}
+
+		{% endblock %}
+
+	{% endblock %}
+
+	{% block content %}
+		<!-- super function renders HTML from base.html 
+			 that is within the content block. -->
+		{{ super() }}
+
+	{% endblock %}
