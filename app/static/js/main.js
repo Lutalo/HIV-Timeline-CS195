@@ -39,5 +39,3 @@ function navHighlight()
         //  console.log("hit else statement");
     }
 }
-
-navHighlight();
