@@ -15,7 +15,7 @@
 		<!-- External JS files specific to this page can be referenced here -->
 		<script type="text/javascript" src="/static/js/lib/vis.js"></script>
 	{% endblock %}
-	
+
 	{% block script %}
 		<script type="text/javascript">
 			var timelineArray = [];
@@ -36,7 +36,7 @@
 {% endblock %}
 
 {% block content %}
-	<!-- super function renders HTML from base.html 
+	<!-- super function renders HTML from base.html
 		 that is within the content block. -->
 	{{ super() }}
 	<!-- end super -->
@@ -46,5 +46,7 @@
 	<script type="text/javascript" src="/static/js/timeline.js"></script>
 
 {% endblock %}
-	
 
+	{% block footer_js %}
+	{{super()}}
+	{% endblock %}

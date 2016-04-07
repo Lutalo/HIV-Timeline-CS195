@@ -50,7 +50,7 @@
 
                 <li id="about"><a href="/about">about us</a></li>
 
-                <li class="dropdown services">
+                <li class="dropdown-services" id="services">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">services<span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="/support">community support</a></li>
@@ -96,5 +96,7 @@
 
         {% endblock %}
 
+        {% block footer_js %}
+        {% endblock %}
     </body>
 </html>
