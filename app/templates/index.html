@@ -39,15 +39,19 @@
 {% endblock %}
 
 {% block content %}
-	<!-- Navigation -->
-	{{ super() }}
-	<!-- end navigation -->
+	{% block header %}
+		<!-- Navigation -->
+		{{ super() }}
+		<!-- end navigation -->
+	{% endblock %}
 
-	<!-- Timeline elements -->
-	
-	<div id="graphvis"></div>
-	<div id="timelinevis"></div>
-	<!-- end timeline elements -->
+		<!-- Timeline elements -->
+		<!-- end timeline elements -->
+
+	{% block footer %}
+		{{ super() }}
+	{% endblock %}
+
 
 {% endblock %}
 
@@ -55,5 +59,3 @@
 	<script type="text/javascript" src="/static/js/timeline.js"></script>
 {{super()}}
 {% endblock %}
-
-	
