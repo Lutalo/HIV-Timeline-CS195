@@ -8,6 +8,7 @@
 		{{super()}}
 		<!-- External CSS files specific to this page can be referenced here -->
 		<link rel="stylesheet" type="text/css" href="/static/css/lib/vis.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/hiv-timeline.css">
 	{% endblock %}
 
 	{% block head_js %}
@@ -26,8 +27,10 @@
 
 			for (var i = 0; i < timelineArray.length; i++){
 				timelineArray[i].start = timelineArray[i].year + '-01-01';
+				timelineArray[i].x = timelineArray[i].year + '-01-01';
 				timelineArray[i].end = timelineArray[i].year + '-12-31';
-				timelineArray[i].content = '' + timelineArray[i].deaths;
+				timelineArray[i].content = '' + timelineArray[i].political;
+				timelineArray[i].y = '' + timelineArray[i].deaths;
 			}
 
 		</script>
@@ -36,17 +39,21 @@
 {% endblock %}
 
 {% block content %}
-	<!-- super function renders HTML from base.html
-		 that is within the content block. -->
+	<!-- Navigation -->
 	{{ super() }}
-	<!-- end super -->
+	<!-- end navigation -->
 
-	<div id="visualization"></div>
-
-	<script type="text/javascript" src="/static/js/timeline.js"></script>
+	<!-- Timeline elements -->
+	
+	<div id="graphvis"></div>
+	<div id="timelinevis"></div>
+	<!-- end timeline elements -->
 
 {% endblock %}
 
-	{% block footer_js %}
-	{{super()}}
-	{% endblock %}
+{% block footer_js %}
+	<script type="text/javascript" src="/static/js/timeline.js"></script>
+{{super()}}
+{% endblock %}
+
+	

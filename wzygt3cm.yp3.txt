@@ -1,0 +1,39 @@
+﻿Merge branch 'master' of https://github.com/Lutalo/HIV-Timeline-CS195
+
+# Conflicts:
+#	app/templates/base.html
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 3 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	new file:   0own5yy1.vpd.txt
+#	deleted:    Thumbs.db
+#	new file:   app/static/css/hiv-timeline.css
+#	modified:   app/static/js/timeline.js
+#	modified:   app/templates/about.html
+#	modified:   app/templates/abouthiv.html
+#	modified:   app/templates/advocacy.html
+#	modified:   app/templates/base.html
+#	modified:   app/templates/classes.html
+#	modified:   app/templates/index.html
+#	modified:   app/templates/partners.html
+#	modified:   app/templates/prevention.html
+#	modified:   app/templates/support.html
+#	modified:   app/templates/testing.html
+#	modified:   app/templates/videos.html
+#	modified:   app/templates/volunteer.html
+#
+
