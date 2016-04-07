@@ -36,17 +36,19 @@
 {% endblock %}
 
 {% block content %}
-	<!-- super function renders HTML from base.html
-		 that is within the content block. -->
+	<!-- Navigation -->
 	{{ super() }}
-	<!-- end super -->
+	<!-- end navigation -->
 
+	<!-- Timeline elements -->
 	<div id="visualization"></div>
+	<!-- end timeline elements -->
 
+	{% block footer_js %}
 	<script type="text/javascript" src="/static/js/timeline.js"></script>
+	{{super()}}
+	{% endblock %}
 
 {% endblock %}
 
-	{% block footer_js %}
-	{{super()}}
-	{% endblock %}
+	

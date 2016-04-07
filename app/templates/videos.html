@@ -6,25 +6,27 @@
 
 	{% block head_css %}
 		{{super()}}
-		{% endblock %}
+	{% endblock %}
 
 	{% block head_js %}
 		{{super()}}
-		{% endblock %}
+	{% endblock %}
 
 	{% block script %}
 
-		{% endblock %}
-
 	{% endblock %}
 
-	{% block content %}
-		<!-- super function renders HTML from base.html
-			 that is within the content block. -->
-		{{ super() }}
+{% endblock %}
 
-	{% endblock %}
+{% block content %}
+	<!-- super function renders HTML from base.html
+		 that is within the content block. -->
+	{{ super() }}
 
-		{% block footer_js %}
+	{% block footer_js %}
 		{{super()}}
-		{% endblock %}
+	{% endblock %}
+
+{% endblock %}
+
+
