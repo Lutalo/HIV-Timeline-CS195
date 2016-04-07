@@ -14,3 +14,25 @@ body {
 a:hover {
   color: #000;
 }
+
+#footer div {
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+#footer ul {
+  list-style-type: none;
+}
+
+#footer .footer-nav {
+  float: left;
+}
+
+#footer .share {
+  float: right;
+  text-align: center;
+}
+
+.share-icons li {
+  display: inline;
+}
