@@ -14,7 +14,6 @@
 	{% block head_js %}
 		{{super()}}
 		<!-- External JS files specific to this page can be referenced here -->
-		<script type="text/javascript" src="/static/js/lib/vis.js"></script>
 	{% endblock %}
 
 	{% block script %}
@@ -56,6 +55,6 @@
 {% endblock %}
 
 {% block footer_js %}
-	<script type="text/javascript" src="/static/js/timeline.js"></script>
+	<script type="text/javascript" src="/static/js/lib/timeline.js"></script>
 {{super()}}
 {% endblock %}
