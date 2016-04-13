@@ -29,9 +29,9 @@
           {% block header %}
           <!-- html in the body goes here -->
           <nav class="navbar navbar-default">
-            <div class="container-navbar">
+            <div class="container-fluid">
 
-              <!-- Brand and toggle get grouped for better mobile display -->
+              <!-- Brand and toggle get grouped for better mobile display aka hamburger menu -->
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                   <span class="sr-only">Toggle navigation</span>
@@ -47,13 +47,13 @@
               </div>
 
               <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse">
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                   <li id="home"><a href="/">home<span class="sr-only">(current)</span></a></li>
 
                   <li id="about"><a href="/about">about us</a></li>
 
-                  <li class="dropdown-services" id="services">
+                  <li class="dropdown services" id="services">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">services<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       <li><a href="/support">community support</a></li>
@@ -61,7 +61,7 @@
                     </ul>
                   </li>
 
-                  <li class="dropdown-information" id="information">
+                  <li class="dropdown information" id="information">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">information<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       <li><a href="/aboutHIV">about HIV</a></li>
@@ -72,7 +72,7 @@
 
                   <li id="partners"><a href="/partners">community partners</a></li>
 
-                  <li class="dropdown-get-involved" id="get-involved">
+                  <li class="dropdown get-involved" id="get-involved">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">get involved<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       <li><a href="/advocacy">advocacy</a></li>
@@ -93,6 +93,7 @@
               </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
           </nav>
+
           <script type="text/javascript">
               navHighlight();
           </script>
@@ -123,7 +124,7 @@
         {% endblock %}
 
         {% block footer_js %}
-        
+
         {% endblock %}
     </body>
 </html>
