@@ -4,9 +4,13 @@ function Event(date, category, string) {
 
 	this.typeOf = category; 
 
-	this.date = date;
+	this.date = new Date(date);
 
 	this.eventText = string;
+
+	this.getType = function() {
+		return this.typeOf; 
+	}
 
 	this.getDate = function() {
 		return this.date;

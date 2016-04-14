@@ -12,10 +12,12 @@ function Display() {
 		// Draw an event on a segment
 	}
 
-	this.removeSegment = function() {
+	this.nextSegment = function() {
 
 	}
 
-	this.
+	this.prevSegment = function() {
+
+	}
 
 }

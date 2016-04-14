@@ -17,12 +17,17 @@ function Timeline() {
         return EventsObject; 
     }
 
-    this.getSize = function() {
+    this.numOfEvents = function() {
         return this.timelineArray.length; 
     }
 
     this.firstEvent = function() {
         this.currentEventInt = this.firstEventInt;
+        return this.timelineArray[this.currentEventInt]; 
+    }
+
+    this.lastEvent = function() {
+        this.currentEventInt = this.timelineArray.length-1;
         return this.timelineArray[this.currentEventInt]; 
     }
 
@@ -32,18 +37,20 @@ function Timeline() {
 
     this.nextEvent = function() {
         this.currentEventInt++;
-        if (this.currentEventInt >= this.getSize())
+        if (this.currentEventInt >= this.numOfEvents())
             this.currentEventInt = this.firstEventInt; 
         return this.timelineArray[this.currentEventInt]; 
     }
 
     this.prevEvent = function() {
         this.currentEventInt--;
+        if (this.currentEventInt <= 0)
+            this.currentEventInt = this.firstEventInt; 
         return this.timelineArray[this.currentEventInt]; 
     }   
 
-    this.getAll = function() {
-        return this.timelineArray;
+    this.copyOfArray = function() {
+        // return this.eventsArray;
     }
 
 }

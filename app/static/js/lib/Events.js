@@ -14,7 +14,7 @@ function Events(name) {
 		return this.name; 
 	}
 
-	this.getSize = function() {
+	this.numOfEvents = function() {
 		return this.eventsArray.length; 
 	}
 
@@ -29,13 +29,18 @@ function Events(name) {
 		return this.eventsArray[this.currentEventInt]; 
 	}
 
+	this.lastEvent = function() {
+        this.currentEventInt = this.eventsArray.length-1;
+        return this.eventsArray[this.currentEventInt]; 
+    }
+
 	this.currentEvent = function() {
 		return this.eventsArray[this.currentEventInt]; 
 	}
 
 	this.nextEvent = function() {
 		this.currentEventInt++;
-		if (this.currentEventInt >= this.getSize())
+		if (this.currentEventInt >= this.getNumOfEvents())
 			this.currentEventInt = this.firstEventInt; 
 		return this.eventsArray[this.currentEventInt]; 
 	}
@@ -45,8 +50,8 @@ function Events(name) {
 		return this.eventsArray[this.currentEventInt]; 
 	}	
 
-	this.getAll = function() {
-		return this.eventsArray;
+	this.copyOfArray = function() {
+		// return this.eventsArray;
 	}
 
 }
