@@ -18,8 +18,8 @@ function Events(name) {
 		return this.eventsArray.length; 
 	}
 
-	this.addEvent = function(date, string) {
-		var newEvent = new Event(date, string);
+	this.addEvent = function(date, category, string) {
+		var newEvent = new Event(date, category, string);
 		this.eventsArray.push(newEvent);
 		return newEvent;  
 	}

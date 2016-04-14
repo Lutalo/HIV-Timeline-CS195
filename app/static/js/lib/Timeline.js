@@ -3,17 +3,17 @@
 function Timeline() {
 
     // Array of different arrays of events
-    this.eventsArray = []
+    this.eventsGroupArray = [];
 
     // Array of exploded 
-    this.timelineArray = []
+    this.timelineArray = [];
 
     this.firstEventInt = 0; 
 
     this.currentEventInt = this.firstEventInt;
 
     this.addEventsGroup = function(EventsObject) {
-        this.eventsArray.push(EventsObject);
+        this.eventsGroupArray.push(EventsObject);
         return EventsObject; 
     }
 
@@ -50,7 +50,11 @@ function Timeline() {
     }   
 
     this.copyOfArray = function() {
-        // return this.eventsArray;
+        // return this.eventsGroupArray;
+    }
+
+    this.sortIntoTimeline = function(EventsObject) {
+        
     }
 
 }

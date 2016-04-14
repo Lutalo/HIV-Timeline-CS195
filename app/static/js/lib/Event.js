@@ -1,12 +1,14 @@
 // Event Class
 
-function Event(date, category, string) {
+function Event(dateString, category, string) {
 
 	this.typeOf = category; 
 
-	this.date = new Date(date);
+	this.date = new Date(dateString);
 
 	this.eventText = string;
+
+	this.imgURI = ''; 
 
 	this.getType = function() {
 		return this.typeOf; 
