@@ -2,7 +2,6 @@
 
 function Timeline() {
 
-    EventArray.call(this); 
     // Array of different arrays of events
     this.eventsGroupArray = [];
 
@@ -17,5 +16,5 @@ function Timeline() {
 
 }
 
-Timeline.prototype = Object.create(EventArray.prototype);
+Timeline.prototype = new EventArray();
 Timeline.prototype.constructor = Timeline; 

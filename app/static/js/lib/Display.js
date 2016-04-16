@@ -1,50 +1,11 @@
 // Display Class, for displaying the timeline. 
 
-function Display(TimelineObject, optionsObject) {
+function Display() {
 
-	this.setOptions = function() {
-		if (optionsObject == undefined)
-			return new DisplayOptions();
-		else
-			return optionsObject; 
-	}
-
-	this.displayOptions = this.setOptions(); 
-
-	this.container = '#timeline-container';
-
-	this.eventViewContainer = '#event-viewer-container'; 
-
-	this.timelineObject = TimelineObject;
-	
-	this.drawContainer = function() {
-		var newElement; 
-		var styles = {
-	      width: this.displayOptions.width,
-	      height: this.displayOptions.height
-	    };
-
-	    this.container = $(this.container).append('<div id="timeline"></div>');
-	    newElement = $('#timeline');
-		newElement.css(styles);
-	}
-
-	this.drawEventViewer = function() {
-		var newElement; 
-		var styles = {
-	      width: this.displayOptions.eventViewWidth,
-	      height: this.displayOptions.eventViewHeight
-	    };
-
-	    this.eventViewContainer = $(this.eventViewContainer).append('<div id="event-viewer"></div>');
-	    newElement = $('#event-viewer');
-		newElement.css(styles);
-	}
-
+	this.container = '';
 
 	this.drawSegment = function() {
 		// Draw a decade and its events
-		$('#timeline').append('<hr>');
 	}
 
 	this.drawEvent = function() {
@@ -59,12 +20,4 @@ function Display(TimelineObject, optionsObject) {
 
 	}
 
-	function DisplayOptions() {
-		this.width = '100%';
-		this.height = '50px';
-		this.eventViewWidth = '100%';
-		this.eventViewHeight = '400px';
-	}
-
 }
-

@@ -6,13 +6,11 @@
 
 	{% block head_css %}
 		{{super()}}
-		<link rel="stylesheet" type="text/css" href="/static/css/lib/timeline.css">
 		<link rel="stylesheet" type="text/css" href="/static/css/hiv-timeline.css">
 	{% endblock %}
 
 	{% block head_js %}
 		{{super()}}
-		<script type="text/javascript" src="/static/js/lib/Display.js"></script>
 		<script type="text/javascript" src="/static/js/lib/EventArray.js"></script>
 		<script type="text/javascript" src="/static/js/lib/Event.js"></script>
 		<script type="text/javascript" src="/static/js/lib/Events.js"></script>
@@ -41,10 +39,6 @@
 	{% endblock %}
 
 		<!-- Timeline elements -->
-		<div id="hiv-timeline-container">
-			<div id="event-viewer-container"></div>
-			<div id="timeline-container"></div>
-		</div>
 		<!-- end timeline elements -->
 
 	{% block footer %}
@@ -56,6 +50,5 @@
 
 {% block footer_js %}
 {{super()}}
-<script type="text/javascript" src="/static/js/lib/puro.js"></script>
 <script type="text/javascript" src="/static/js/init_timeline.js"></script>
 {% endblock %}
