@@ -1,8 +1,10 @@
 // Events class containing event.
 
 function Events(name) {
+
+	EventArray.call(this); 
 	this.name = name;
 }
 
-Events.prototype = new EventArray();
-Events.prototype.constructor = Events; 
+Events.prototype = Object.create(EventArray.prototype);
+Events.prototype.constructor = Events;

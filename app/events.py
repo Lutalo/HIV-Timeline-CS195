@@ -14,7 +14,7 @@ class Event(Model):
 	international = TextField()
 	political = TextField()
 	social = TextField()
-	celeb = TextField()
+	celebrity = TextField()
 
 	class Meta:
 		database = db
@@ -32,7 +32,7 @@ def insertRow(dataList):
 		international = dataList[3],
 		political = dataList[4],
 		social = dataList[5],
-		celeb = dataList[6]
+		celebrity = dataList[6]
 		)
 
 def displayTable():
