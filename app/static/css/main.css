@@ -2,17 +2,31 @@ body {
   font-family: Consolas;
 }
 
-p {
-align: left;
-font-size: 0.875em;
-}
+
 .about-heading {
-font-family:
-font-size: all-caps ;
+font-family :
+font-variant: ;
+text-align: left;
 margin-top: 
 color:#ffffff;
 }
 
+h2 {
+    text-align: left;
+    font-size: 1em;
+}
+
+p { 
+    align= left;
+
+ul
+{
+ list-style-type: none;
+}
+
+li {
+    text-align: left;
+}
 
 .timeline-events {
 width: 100px;
