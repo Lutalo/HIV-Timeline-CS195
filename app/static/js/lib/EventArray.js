@@ -4,7 +4,7 @@ function EventArray() {
 
 	this.firstEventInt = 0; 
 
-	this.currentEventInt = this.firstEventInt;
+	this.currentEventInt = -1;
 
 	this.getName = function() {
 		return this.name; 
@@ -17,6 +17,7 @@ function EventArray() {
 	this.addEvent = function(date, category, string) {
 		var newEvent = new Event(date, category, string);
 		this.eventsArray.push(newEvent);
+		this.currentEventInt++; 
 		return newEvent;  
 	}
 
@@ -36,7 +37,7 @@ function EventArray() {
 
 	this.nextEvent = function() {
 		this.currentEventInt++;
-		if (this.currentEventInt >= this.getNumOfEvents())
+		if (this.currentEventInt >= this.numOfEvents())
 			this.currentEventInt = this.firstEventInt; 
 		return this.eventsArray[this.currentEventInt]; 
 	}
@@ -46,8 +47,8 @@ function EventArray() {
 		return this.eventsArray[this.currentEventInt]; 
 	}	
 
-	this.copyOfArray = function() {
-		// return this.eventsArray;
+	this.getArray = function() {
+		return this.eventsArray; 
 	}
 	
 }

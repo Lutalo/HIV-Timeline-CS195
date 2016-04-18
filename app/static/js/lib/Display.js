@@ -43,7 +43,6 @@ function Display(TimelineObject, optionsObject) {
 
 
 	this.drawSegment = function() {
-		// Draw a decade and its events
 		$('#timeline').append('<hr>');
 	}
 
@@ -64,6 +63,7 @@ function Display(TimelineObject, optionsObject) {
 		this.height = '50px';
 		this.eventViewWidth = '100%';
 		this.eventViewHeight = '400px';
+		this.segmentLength = 10; 
 	}
 
 }

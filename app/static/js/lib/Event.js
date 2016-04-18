@@ -10,12 +10,12 @@ function Event(dateString, category, string) {
 
 	this.imgURI = ''; 
 
-	this.getType = function() {
-		return this.typeOf; 
-	}
-
 	this.getDate = function() {
 		return this.date;
+	}
+
+	this.getType = function() {
+		return this.typeOf; 
 	}
 
 	this.getText = function() {
