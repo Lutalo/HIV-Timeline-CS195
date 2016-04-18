@@ -20,18 +20,68 @@
 {% block content %}
 	<!-- super function renders HTML from base.html
 		 that is within the content block. -->
-		 {% block header %}
+	{% block header %}
 	 		<!-- Navigation -->
 	 		{{ super() }}
 	 		<!-- end navigation -->
+	{% endblock %}
 
-	 	{% endblock %}
+	<!-- body html here -->
+	<div class="heading">
+		<div class="main-img"></div>
+		<h1 class="heading-text">Community Support</h1>
+	</div>
 
-	 	{% block footer %}
-	 		{{ super() }}
-			{% endblock %}
+	<div class="container">
+		<div class="col-md-6">
+			<section class="partner">
+				<h4>San Francisco Aids Foundation</h4>
+				<p>Offers several activities every week. This includes free testing, support groups, counseling, sterile syringes and more.</p>
+				<button>Visit Site</button>
+			</section>
+
+			<section class="partner">
+				<h4>Shanti PROJECT</h4>
+				<p>Provides counseling to educate about HIV disease, how to navigate the healthcare system and they provide emotional support with drop-in couselling.</p>
+				<button>Visit Site</button>
+			</section>
+
+			<section class="partner">
+				<h4>Bay Positives</h4>
+				<p>Provides services to help young people (ages 26 and younger) with a weekly drop-in support group and social events. They also provide personal one-on-one help on a case by case basis and more.</p>
+				<button>Visit Site</button>
+			</section>
+
+			<section class="partner">
+				<h4>AIDS Walk San Francisco</h4>
+				<p>is a yearly fundraiser event. Since 1987, AIDS Walk San Francisco has raised $86 million for HIV programs and services in the Bay Area and has grown into the largest AIDS fundraising even in Northern California.</p>
+				<button>Visit Site</button>
+			</section>
+		</div>
+
+		<div class="timeline-events col-md-4">
+			<ul>Timeline Events
+				<li><a href="#">Community</a></li>
+				<li><a href="#">Group</a></li>
+				<li><a href="#">Healthcare</a></li>
+				<li><a href="#">Fundraiser</a></li>
+				<li><a href="#">California</a></li>
+			</ul>
+		</div>
+
+		<div class="more-services col-md-2">
+			<ul>More Services
+				<li><a href="#">Testing</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- end body htm -->
+	{% block footer %}
+		{{ super() }}
+	{% endblock %}
+
 {% endblock %}
 
 {% block footer_js %}
-{{super()}}
+	{{super()}}
 {% endblock %}

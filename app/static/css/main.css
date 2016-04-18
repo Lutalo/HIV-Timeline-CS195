@@ -1,14 +1,13 @@
 body {
   font-family: Consolas;
 }
-
-
+/*
 .about-heading {
 font-family :
 font-variant: ;
 text-align: left;
-margin-top: 
-color:#ffffff;
+margin-top:
+color: #ffffff;
 }
 
 h2 {
@@ -16,32 +15,34 @@ h2 {
     font-size: 1em;
 }
 
-p { 
+p {
     text-align: left;
 }
+*/
 
-ul
-{
- list-style-type: none;
+ul {
+  list-style-type: none;
 }
 
 li {
-    text-align: left;
+  text-align: left;
 }
 
 .timeline-events {
-width: 100px;
-    height: 200px;
-    border: 1px solid blue;
-    box-sizing: border-box;
-    position: absolute;
-    right: 0px;
+  width: 33%;
+  border: 2px solid #4B90E0;
+  box-sizing: border-box;
+  /* top | right | bottom | left */
+  padding-top: 10px;
+  margin-bottom: 10px;
 }
-
-    
 
 .container {
   margin-top: 60px;
+}
+
+.partner {
+  margin-bottom: 30px;
 }
 
 .container-navbar {
@@ -49,17 +50,17 @@ width: 100px;
   color: #4B90E0;
 }
 
-a:hover {
+/*a:hover {
   color: #000;
-}
+}*/
 
 #footer {
   background: #4B90E0;
+  color: #fff;
 }
 
 #footer div {
   display: inline-block;
-  text-transform: uppercase;
 }
 
 #footer ul {
@@ -69,6 +70,7 @@ a:hover {
 
 #footer .footer-nav {
   position: relative, left:0;
+  text-transform: uppercase;
 }
 
 #footer .footer-nav li {
@@ -76,6 +78,7 @@ a:hover {
 }
 
 #footer .footer-nav a {
+  /* possibly change color */
   color: #f8f8ff;
 }
 
