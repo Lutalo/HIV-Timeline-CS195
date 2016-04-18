@@ -38,7 +38,9 @@ Timeline.addEventsGroup(celebGroup);
 Timeline.addEventsGroup(healthGroup);
 Timeline.addEventsGroup(interGroup);
 Timeline.addEventsGroup(poliGroup);
-Timeline.addEventsGroup(sociGroup); 
+Timeline.addEventsGroup(sociGroup);
+Timeline.sortEvents(Timeline.getArray(), 0, Timeline.numOfEvents()-1);
+
 
 Display.drawContainer();
 Display.drawEventViewer();
