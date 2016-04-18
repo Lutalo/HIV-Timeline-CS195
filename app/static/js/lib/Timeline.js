@@ -19,48 +19,48 @@ function Timeline() {
     	}
     }
 
-	// this.mergeSort = function(data) {
-	//     if(data == 1) 
-	//     	return data;
-	  
-	//     var mid = data.length / 2;
-	//     var left = data.slice(0, mid);
-	//     var right = data.slice(mid);
-	  
-	//     left = this.merge(left);
-	//     right = this.mergeSort(right);
-	      
-	//     return this.merge(left, right);
-	// }
-  
-	// this.merge = function(left, right) {
-	//     var result=[];
-	//     var leftIndex=0;
-	//     var rightIndex=0;
-	  
-	//     while(leftIndex < left.length && rightIndex < right.length) {
-	//         if(left[leftIndex] > right[rightIndex]) {
-	//             result.push(right[rightIndex]);
-	//             rightIndex++;
-	//         } else {
-	//             result.push(left[leftIndex]);
-	//             leftIndex++;
-	//         }
-	//     }
+	this.sortEvents = function(items, left, right) {
 
-	//     while(leftIndex < left.length) {
-	//         result.push(left[leftIndex]);
-	//         leftIndex++;
-	//     }
+        var index;
 
-	//     while(rightIndex < right.length) {
-	//         result.push(right[rightIndex]);
-	//         rightIndex++;
-	//     }
+        if (items.length > 1) {
+            index = partition(items, left, right);
+            if (left < index - 1)
+                this.sortEvents(items, left, index - 1);
+            if (index < right)
+                this.sortEvents(items, index, right);
+        }
 
-	//     return result;
+        return items;
 
-	// }
+        function swap(items, firstIndex, secondIndex){
+            var temp = items[firstIndex];
+            items[firstIndex] = items[secondIndex];
+            items[secondIndex] = temp;
+        }
+
+        function partition(items, left, right) {
+
+            var pivot   = items[Math.floor((right + left) / 2)].getDate(),
+                i       = left,
+                j       = right;
+
+
+            while (i <= j) {
+                while (items[i].getDate() < pivot)
+                    i++;
+                while (items[j].getDate() > pivot) 
+                    j--;
+                if (i <= j) {
+                    swap(items, i, j);
+                    i++;
+                    j--;
+                }
+            }
+
+            return i;
+        }
+    }
 }
 
 Timeline.prototype = Object.create(EventArray.prototype);
