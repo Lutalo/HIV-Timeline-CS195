@@ -29,7 +29,6 @@ li {
 }
 
 .timeline-events {
-  width: 33%;
   border: 2px solid #4B90E0;
   box-sizing: border-box;
   /* top | right | bottom | left */
@@ -39,10 +38,8 @@ li {
 
 .container {
   margin-top: 60px;
-}
-
-.partner {
-  margin-bottom: 30px;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
 .container-navbar {
@@ -50,9 +47,18 @@ li {
   color: #4B90E0;
 }
 
-/*a:hover {
-  color: #000;
-}*/
+.heading {
+  background-color: #A4C7F0;
+}
+
+.heading-text {
+  bottom: 0;
+  left: 0;
+}
+
+.partner {
+  margin-bottom: 30px;
+}
 
 #footer {
   background: #4B90E0;
