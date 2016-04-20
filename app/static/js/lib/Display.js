@@ -38,13 +38,13 @@ function Display(TimelineObject, optionsObject) {
 
 
 	this.drawSegment = function() {
-		var vLine;
+		var vLine, lineRule; 
 		var segmL = this.displayOptions.segmentLength
 		var timeline = this.timelineObject; 
 		var line = $('#timeline');
 		var div = '<div class="vertical-line"></div>'
 		var vLineStyles = {
-			left: segmL		
+			left: 0		
 		};
 
 		line.append('<hr>');
@@ -53,12 +53,14 @@ function Display(TimelineObject, optionsObject) {
 			vLine = line.append(div)
 		}
 
+		lineRule = line.outerWidth() / segmL; 
 
+		console.log(lineRule); 
 
-		// for (var )
-
-
-
+		$.each($('#timeline div'), function() {
+			vLineStyles.left = (vLineStyles.left + lineRule); 
+			$(this).css(vLineStyles); 
+		});
 	}
 
 	this.drawEvent = function() {

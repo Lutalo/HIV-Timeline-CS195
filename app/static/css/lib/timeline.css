@@ -23,7 +23,9 @@
 /*Line rules*/
 .vertical-line {
 	position: relative;
+	top: 23px;
 	width: 2px;
 	height: 5px;
+	display: inline;
 	border-left: 2px solid black;
 }
