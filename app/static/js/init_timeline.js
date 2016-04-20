@@ -6,7 +6,7 @@ var date,
 	sociGroup;
 
 var Timeline = new Timeline();
-var Display = new Display(); 
+var Display = new Display(Timeline); 
 
 celebGroup = new Events('celebrity');
 healthGroup = new Events('health');
@@ -40,7 +40,6 @@ Timeline.addEventsGroup(interGroup);
 Timeline.addEventsGroup(poliGroup);
 Timeline.addEventsGroup(sociGroup);
 Timeline.sortEvents(Timeline.getArray(), 0, Timeline.numOfEvents()-1);
-
 
 Display.drawContainer();
 Display.drawEventViewer();

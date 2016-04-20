@@ -2,14 +2,9 @@
 
 function Display(TimelineObject, optionsObject) {
 
-	this.setOptions = function() {
-		if (optionsObject == undefined)
-			return new DisplayOptions();
-		else
-			return optionsObject; 
-	}
+	this.currentSegment = -1; 
 
-	this.displayOptions = this.setOptions(); 
+	this.displayOptions = setOptions(); 
 
 	this.container = '#timeline-container';
 
@@ -43,7 +38,27 @@ function Display(TimelineObject, optionsObject) {
 
 
 	this.drawSegment = function() {
-		$('#timeline').append('<hr>');
+		var vLine;
+		var segmL = this.displayOptions.segmentLength
+		var timeline = this.timelineObject; 
+		var line = $('#timeline');
+		var div = '<div class="vertical-line"></div>'
+		var vLineStyles = {
+			left: segmL		
+		};
+
+		line.append('<hr>');
+
+		for (var i = 0; i < segmL; i++) {
+			vLine = line.append(div)
+		}
+
+
+
+		// for (var )
+
+
+
 	}
 
 	this.drawEvent = function() {
@@ -56,6 +71,13 @@ function Display(TimelineObject, optionsObject) {
 
 	this.prevSegment = function() {
 
+	}
+
+	function setOptions() {
+		if (optionsObject == undefined)
+			return new DisplayOptions();
+		else
+			return optionsObject; 
 	}
 
 	function DisplayOptions() {
