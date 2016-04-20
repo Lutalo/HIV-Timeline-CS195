@@ -20,18 +20,85 @@
 {% block content %}
 	<!-- super function renders HTML from base.html
 		 that is within the content block. -->
-		 {% block header %}
+	{% block header %}
 	 		<!-- Navigation -->
 	 		{{ super() }}
 	 		<!-- end navigation -->
+	{% endblock %}
 
-	 	{% endblock %}
+	<!-- body html here -->
+	<div class="heading">
+		<div class="main-img">
+			<!-- image here -->
+		</div>
+		<div class="heading-text">
+			<h1>Prevention</h1>
+		</div>
+	</div>
 
-	 	{% block footer %}
-	 		{{ super() }}
-			{% endblock %}
+	<div class="prevention container">
+		<div class="content col-md-8">
+			<!-- brochures, give each element width of div/2 -->
+			<div class="brochure">
+				<img src="http://www.w3schools.com/bootstrap/sanfran.jpg">
+				<h4>Brochure Title</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+
+			<div class="brochure">
+				<img src="http://www.w3schools.com/bootstrap/sanfran.jpg">
+				<h4>Brochure Title</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+
+			<div class="brochure">
+				<img src="http://www.w3schools.com/bootstrap/sanfran.jpg">
+				<h4>Brochure Title</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+
+			<div class="brochure">
+				<img src="http://www.w3schools.com/bootstrap/sanfran.jpg">
+				<h4>Brochure Title</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+
+			<div class="brochure">
+				<img src="http://www.w3schools.com/bootstrap/sanfran.jpg">
+				<h4>Brochure Title</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+
+			<div class="brochure">
+				<img src="http://www.w3schools.com/bootstrap/sanfran.jpg">
+				<h4>Brochure Title</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+		</div>
+
+		<div class="right-section col-md-4">
+			<div class="more-services pull-botto">
+				<ul>More Services
+					<li><a href="#">Community Support</a></li>
+				</ul>
+			</div>
+
+			<div class="timeline-events pull-botto">
+				<ul>Timeline Events
+					<li><a href="#">Testing</a></li>
+					<li><a href="#">Screening</a></li>
+					<li><a href="#">Research</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- end body html -->
+	{% block footer %}
+		{{ super() }}
+	{% endblock %}
+
 {% endblock %}
 
 {% block footer_js %}
-{{super()}}
+	{{super()}}
 {% endblock %}

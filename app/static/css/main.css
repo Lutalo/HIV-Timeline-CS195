@@ -60,6 +60,32 @@ li {
   margin-bottom: 30px;
 }
 
+.prevention .content {
+  margin-bottom: 30px;
+}
+
+.brochure {
+  width: 49%;
+  height: auto;
+  display: inline-block;
+}
+
+.brochure img {
+  width: 33%;
+  height: auto;
+  float: left;
+}
+
+.brochure h4, .brochure p {
+  word-wrap: break-word;
+}
+
+.pull-bottom {
+    display: inline-block;
+    vertical-align: bottom;
+    float: none;
+}
+
 #footer {
   background: #4B90E0;
   color: #fff;
@@ -91,7 +117,8 @@ li {
 #footer .share {
   position: absolute;
   right: 0px;
-  text-align: center;
+  text-align: right;
+  /*wrap text?*/
 }
 
 .share-icons li {
