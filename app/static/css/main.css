@@ -37,9 +37,7 @@ li {
 }
 
 .container {
-  margin-top: 60px;
-  margin-left: 60px;
-  margin-right: 60px;
+  margin: 60px 60px 60px 60px;
 }
 
 .container-navbar {
@@ -73,6 +71,7 @@ li {
   width: 49%;
   height: auto;
   display: inline-block;
+  margin-bottom: 20px;
 }
 
 .brochure img {
@@ -83,6 +82,10 @@ li {
 
 .brochure h4, .brochure p {
   word-wrap: break-word;
+}
+
+.more-services {
+  margin-bottom: 20px;
 }
 
 .pull-bottom {

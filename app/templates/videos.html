@@ -20,18 +20,85 @@
 {% block content %}
 	<!-- super function renders HTML from base.html
 		 that is within the content block. -->
-		 {% block header %}
+	{% block header %}
 	 		<!-- Navigation -->
 	 		{{ super() }}
 	 		<!-- end navigation -->
+	{% endblock %}
 
-	 	{% endblock %}
+	<!-- body html here -->
+	<div class="heading">
+		<div class="main-img">
+			<!-- image here -->
+		</div>
+		<div class="heading-text">
+			<h1>Videos</h1>
+		</div>
+	</div>
 
-	 	{% block footer %}
-	 		{{ super() }}
-			{% endblock %}
+	<div class="videos container">
+		<div class="content col-md-8">
+			<!-- brochures, give each element width of div/2 -->
+			<div class="video">
+				<img src="http://www.depaul.edu/campustour/Pages/_layouts/spotlight/btn-videoplayoverlay.png">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+
+			<div class="video">
+				<img src="http://www.depaul.edu/campustour/Pages/_layouts/spotlight/btn-videoplayoverlay.png">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+
+			<div class="video">
+				<img src="http://www.depaul.edu/campustour/Pages/_layouts/spotlight/btn-videoplayoverlay.png">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+
+			<div class="video">
+				<img src="http://www.depaul.edu/campustour/Pages/_layouts/spotlight/btn-videoplayoverlay.png">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+
+			<div class="video">
+				<img src="http://www.depaul.edu/campustour/Pages/_layouts/spotlight/btn-videoplayoverlay.png">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+
+			<div class="video">
+				<img src="http://www.depaul.edu/campustour/Pages/_layouts/spotlight/btn-videoplayoverlay.png">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+
+			<div class="video">
+				<img src="http://www.depaul.edu/campustour/Pages/_layouts/spotlight/btn-videoplayoverlay.png">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+
+		</div>
+
+		<div class="right-section col-md-4">
+			<div class="more-services">
+				<ul>More Services
+					<li><a href="#">Community Support</a></li>
+				</ul>
+			</div>
+
+			<div class="timeline-events">
+				<ul>Timeline Events
+					<li><a href="#">Testing</a></li>
+					<li><a href="#">Screening</a></li>
+					<li><a href="#">Research</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- end body html -->
+	{% block footer %}
+		{{ super() }}
+	{% endblock %}
+
 {% endblock %}
 
 {% block footer_js %}
-{{super()}}
+	{{super()}}
 {% endblock %}
