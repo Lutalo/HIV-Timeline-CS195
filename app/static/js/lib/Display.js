@@ -8,9 +8,11 @@ function Display(TimelineObject, optionsObject) {
 
 	this.container = '#timeline-container';
 
+	this.timelineContiner = '#timeline';
+
 	this.eventViewContainer = '#event-viewer-container'; 
 
-	this.timelineObject = TimelineObject;
+	this.Timeline = TimelineObject;
 	
 	this.drawContainer = function() {
 		var newElement; 
@@ -20,7 +22,7 @@ function Display(TimelineObject, optionsObject) {
 	    };
 
 	    this.container = $(this.container).append('<div id="timeline"></div>');
-	    newElement = $('#timeline');
+	    newElement = $(this.timelineContiner);
 		newElement.css(styles);
 	}
 
@@ -41,7 +43,7 @@ function Display(TimelineObject, optionsObject) {
 		var vLine, lineRule; 
 		var segmL = this.displayOptions.segmentLength
 		var timeline = this.timelineObject; 
-		var line = $('#timeline');
+		var line = $(this.timelineContiner);
 		var div = '<div class="vertical-line"></div>'
 		var vLineStyles = {
 			left: 0		
@@ -65,7 +67,14 @@ function Display(TimelineObject, optionsObject) {
 	}
 
 	this.drawEvent = function() {
-		// Draw an event on a segment
+		var Event = this.Timeline.currentEvent();
+		var eventElement;
+		
+		for (var i = 0; i < Timeline.numOfEvents(); i++) {
+			eventElement = '<div class="' + Event.getType() + ' event"></div>';
+			$(this.timelineContiner).append(eventElement);
+			Event = this.Timeline.nextEvent(); 
+		}
 	}
 
 	this.nextSegment = function() {
