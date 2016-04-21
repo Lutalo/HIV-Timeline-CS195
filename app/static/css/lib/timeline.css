@@ -1,21 +1,36 @@
+#hiv-timeline-container {
+	background: #EDEDED;
+}
+
+#timeline-heading {
+	padding: 20px 0; 
+}
+
+#timeline-heading h1 {
+	margin: 0;
+	text-align: center;
+}
+
 #event-viewer-container, #timeline-container {
 	width: 1080px;
 	margin: 0 auto;
-	background-color: lightgrey;
+	background-color: #EDEDED;
 }
 
 #hiv-timeline-container {
-	margin-bottom: 40px;
-	background: grey;
+	background: #EDEDED;
+}
+
+#event-viewer {
+	border-left: 0.5px solid black; 
 }
 
 /*Line Segment*/
 #timeline-container hr {
 	position: relative;
-	top: 25px;
     border-style: solid;
     border-color: black;
-    border-width: 1px 0 0 0;
+    border-width: 2px 0 0 0;
     padding: 0;
     margin: 0;
 }
@@ -23,9 +38,12 @@
 /*Line rules*/
 .vertical-line {
 	position: relative;
-	top: 23px;
-	width: 2px;
+	width: 1px;
 	height: 5px;
 	display: inline;
 	border-left: 2px solid black;
+}
+
+.vertical-line, #timeline-container hr {
+	top: 0px;
 }

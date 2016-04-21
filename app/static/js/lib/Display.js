@@ -53,9 +53,10 @@ function Display(TimelineObject, optionsObject) {
 			vLine = line.append(div)
 		}
 
-		lineRule = line.outerWidth() / segmL; 
-
-		console.log(lineRule); 
+		// container width divided by the..
+		// segment length plus the width of a vertical line, 
+		// minus the width of the vertical lines. 
+		lineRule = (line.outerWidth() / (segmL + 1)) - 2.5;
 
 		$.each($('#timeline div'), function() {
 			vLineStyles.left = (vLineStyles.left + lineRule); 
@@ -84,9 +85,9 @@ function Display(TimelineObject, optionsObject) {
 
 	function DisplayOptions() {
 		this.width = '100%';
-		this.height = '50px';
+		this.height = '100px';
 		this.eventViewWidth = '100%';
-		this.eventViewHeight = '400px';
+		this.eventViewHeight = '500px';
 		this.segmentLength = 10; 
 	}
 

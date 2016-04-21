@@ -47,6 +47,11 @@ li {
   color: #4B90E0;
 }
 
+/*bootstrap override*/
+.navbar {
+  margin-bottom: 0px;
+}
+
 .heading {
   background-color: #A4C7F0;
 }
