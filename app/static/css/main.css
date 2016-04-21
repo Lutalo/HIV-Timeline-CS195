@@ -1,5 +1,5 @@
 body {
-  font-family: Consolas;
+  font-family: 'Lato', sans-serif;
 }
 /*
 .about-heading {
@@ -54,6 +54,12 @@ li {
   background-color: #A4C7F0;
 }
 
+.main-img {
+    height: 300px;
+    width: 100%;
+    background-color: lightblue;
+}
+
 .heading-text {
   bottom: 0;
   left: 0;
@@ -97,19 +103,18 @@ li {
 #footer {
   background: #4B90E0;
   color: #fff;
+  padding-bottom: 30px;
 }
 
 #footer div {
   display: inline-block;
 }
 
-#footer ul {
+#footer .footer-nav, #footer ul {
   list-style-type: none;
   margin-top: 10px;
-}
-
-#footer .footer-nav {
-  position: relative, left:0;
+  position: relative;
+  left:0px;
   text-transform: uppercase;
 }
 
@@ -123,18 +128,15 @@ li {
 }
 
 #footer .share {
+  margin-top: 8px;
+  width: 70%;
   position: absolute;
   right: 0px;
   text-align: right;
-  /*wrap text?*/
+  overflow:auto;
+  padding: 10px 20px 0 0;
 }
 
 .share-icons li {
   display: inline;
-}
-
-.main-img{
-    height: 500px;
-    width: 100%;
-    background-color: lightblue;
 }
