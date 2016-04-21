@@ -6,11 +6,11 @@ function Display(TimelineObject, optionsObject) {
 
 	this.displayOptions = setOptions(); 
 
-	this.container = '#timeline-container';
+	this.container = this.displayOptions.container;
 
-	this.timelineContiner = '#timeline';
+	this.timelineContiner = this.displayOptions.timelineContiner;
 
-	this.eventViewContainer = '#event-viewer-container'; 
+	this.eventViewContainer = this.displayOptions.eventViewContainer; 
 
 	this.Timeline = TimelineObject;
 	
@@ -97,7 +97,10 @@ function Display(TimelineObject, optionsObject) {
 		this.height = '100px';
 		this.eventViewWidth = '100%';
 		this.eventViewHeight = '500px';
-		this.segmentLength = 10; 
+		this.segmentLength = 10;
+		this.container = '#timeline-container';
+		this.timelineContiner = '#timeline';
+		this.eventViewContainer = '#event-viewer-container'; 
 	}
 
 }

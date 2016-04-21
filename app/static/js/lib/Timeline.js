@@ -3,21 +3,6 @@
 function Timeline() {
 
     EventArray.call(this); 
-    // Array of different arrays of events
-    this.eventsGroupArray = [];
-
-    this.addEventsGroup = function(EventsObject) {
-        this.eventsGroupArray.push(EventsObject);
-        this.addAllFromGroup(EventsObject); 
-        return EventsObject; 
-    }
-
-    this.addAllFromGroup = function(EventsObject) {
-    	for (var i = 0; i < EventsObject.numOfEvents(); i++) {
-    		event = EventsObject.nextEvent(); 
-    		this.addEvent(event.getDate(), event.getType(), event.getText());
-    	}
-    }
 
 	this.sortEvents = function(items, left, right) {
 
