@@ -5,7 +5,7 @@
 navigation section                                1282                  62
   
 
-main body section                                 1282                  42                                
+main body section                                 1284                  922                             
    
 
-footer section                                    1284                  922
+footer section                                    1282                  42
