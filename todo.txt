@@ -9,3 +9,5 @@ Comment out css/Organize CSS
 Display event method
 
 Layout page to VMD Specs
+
+Use the latest spreadsheet as the DB. 

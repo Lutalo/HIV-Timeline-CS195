@@ -96,7 +96,7 @@ function Display(TimelineObject, optionsObject) {
 		this.width = '100%';
 		this.height = '100px';
 		this.eventViewWidth = '100%';
-		this.eventViewHeight = '500px';
+		this.eventViewHeight = '400px';
 		this.segmentLength = 10;
 		this.container = '#timeline-container';
 		this.timelineContiner = '#timeline';
