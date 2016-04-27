@@ -54,12 +54,18 @@ li {
 .main-img {
     height: 300px;
     width: 100%;
-    background-color: lightblue;
+    background-size: cover;
 }
 
 .heading-text {
   bottom: 0;
   left: 0;
+}
+
+.heading-text h1 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: rgba(74, 144, 226, 0.3);
 }
 
 .partner {
@@ -78,6 +84,16 @@ li {
     display: inline-block;
     vertical-align: bottom;
     float: none;
+}
+
+/*
+* ============================================================================
+* Header images
+* ============================================================================
+*/
+
+#about-header-image {
+  background-image: url(../img/AboutUs.jpg);
 }
 
 /*
@@ -143,6 +159,7 @@ li {
 
 #footer .share {
   margin-top: 8px;
+  margin-right: 10px;
   width: 70%;
   position: absolute;
   right: 0px;
