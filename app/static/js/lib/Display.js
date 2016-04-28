@@ -42,7 +42,6 @@ function Display(TimelineObject, optionsObject) {
 	this.drawSegment = function() {
 		var vLine, lineRule; 
 		var segmL = this.displayOptions.segmentLength
-		var timeline = this.timelineObject; 
 		var line = $(this.timelineContiner);
 		var div = '<div class="vertical-line"></div>'
 		var vLineStyles = {
@@ -66,15 +65,29 @@ function Display(TimelineObject, optionsObject) {
 		});
 	}
 
-	this.drawEvent = function() {
+	this.drawEvents = function() {
+		var lineRule; 
 		var Event = this.Timeline.currentEvent();
+		var segmL = this.displayOptions.segmentLength;
+		var line = $(this.timelineContiner);
 		var eventElement;
+		var eventStyles = {
+			left: 0		
+		};
 		
-		for (var i = 0; i < Timeline.numOfEvents(); i++) {
+		for (var i = 0; i < segmL; i++) {
 			eventElement = '<div class="' + Event.getType() + ' event"></div>';
 			$(this.timelineContiner).append(eventElement);
 			Event = this.Timeline.nextEvent(); 
 		}
+
+		lineRule = (line.outerWidth() / (segmL + 1.2)) - 22;
+
+		$.each($('#timeline div.event'), function() {
+			eventStyles.left = (eventStyles.left + lineRule); 
+			$(this).css(eventStyles); 
+		});
+
 	}
 
 	this.nextSegment = function() {

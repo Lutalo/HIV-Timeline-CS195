@@ -33,4 +33,4 @@ Timeline.sortEvents(Timeline.getArray(), 0, Timeline.numOfEvents()-1);
 Display.drawContainer();
 Display.drawEventViewer();
 Display.drawSegment();
-Display.drawEvent(); 
+Display.drawEvents(); 
