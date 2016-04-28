@@ -14,8 +14,8 @@ function EventArray() {
 		return this.eventsArray.length; 
 	}
 
-	this.addEvent = function(date, category, string) {
-		var newEvent = new Event(date, category, string);
+	this.addEvent = function(id, date, category, string) {
+		var newEvent = new Event(id, date, category, string);
 		this.eventsArray.push(newEvent);
 		this.currentEventInt++; 
 		return newEvent;  
@@ -49,6 +49,11 @@ function EventArray() {
 
 	this.getArray = function() {
 		return this.eventsArray; 
+	}
+
+	this.getId = function(id) {
+		id = parseInt(id); 
+		return this.eventsArray[id]; 
 	}
 	
 }

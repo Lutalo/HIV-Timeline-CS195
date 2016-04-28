@@ -76,7 +76,7 @@ function Display(TimelineObject, optionsObject) {
 		};
 		
 		for (var i = 0; i < segmL; i++) {
-			eventElement = '<div class="' + Event.getType() + ' event"></div>';
+			eventElement = '<div id="' + Event.getId() + '" class="' + Event.getType() + ' event"></div>';
 			$(this.timelineContiner).append(eventElement);
 			Event = this.Timeline.nextEvent(); 
 		}
@@ -85,7 +85,11 @@ function Display(TimelineObject, optionsObject) {
 
 		$.each($('#timeline div.event'), function() {
 			eventStyles.left = (eventStyles.left + lineRule); 
-			$(this).css(eventStyles); 
+			$(this).css(eventStyles);
+		});
+
+		$('#timeline div.event').click(function() {
+			drawEventView(this.id);  
 		});
 
 	}
@@ -103,6 +107,11 @@ function Display(TimelineObject, optionsObject) {
 			return new DisplayOptions();
 		else
 			return optionsObject; 
+	}
+
+	function drawEventView(id) {
+		var Event = this.Timeline.getId(id);
+		alert(Event.getText()); 	
 	}
 
 	function DisplayOptions() {

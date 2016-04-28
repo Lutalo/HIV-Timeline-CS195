@@ -1,21 +1,27 @@
 // Event Class
 
-function Event(dateString, category, string) {
+function Event(id, dateString, category, string) {
 
-	this.typeOf = category; 
+	this.category = category;
+
+	this.id = id;
 
 	this.date = new Date(dateString);
 
 	this.eventText = string;
 
-	this.imgURI = ''; 
+	this.imgURI = '';
+
+	this.getId = function() {
+		return this.id; 
+	}
 
 	this.getDate = function() {
 		return this.date;
 	}
 
 	this.getType = function() {
-		return this.typeOf; 
+		return this.category; 
 	}
 
 	this.getText = function() {
