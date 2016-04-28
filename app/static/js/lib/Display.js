@@ -48,7 +48,7 @@ function Display(TimelineObject, optionsObject) {
 			left: 0		
 		};
 
-		line.append('<hr>');
+		line.append('<hr style="width:' + this.displayOptions.width + ';">');
 
 		for (var i = 0; i < segmL; i++) {
 			vLine = line.append(div)
@@ -57,7 +57,7 @@ function Display(TimelineObject, optionsObject) {
 		// container width divided by the..
 		// segment length plus the width of a vertical line, 
 		// minus the width of the vertical lines. 
-		lineRule = (line.outerWidth() / (segmL + 1)) - 2.5;
+		lineRule = (line.outerWidth() / (segmL + 1));
 
 		$.each($('#timeline div'), function() {
 			vLineStyles.left = (vLineStyles.left + lineRule); 
@@ -81,7 +81,7 @@ function Display(TimelineObject, optionsObject) {
 			Event = this.Timeline.nextEvent(); 
 		}
 
-		lineRule = (line.outerWidth() / (segmL + 1.2)) - 22;
+		lineRule = (line.outerWidth() / (segmL + 1));
 
 		$.each($('#timeline div.event'), function() {
 			eventStyles.left = (eventStyles.left + lineRule); 
@@ -115,9 +115,9 @@ function Display(TimelineObject, optionsObject) {
 	}
 
 	function DisplayOptions() {
-		this.width = '100%';
+		this.width = '1080px';
 		this.height = '100px';
-		this.eventViewWidth = '100%';
+		this.eventViewWidth = '1080px';
 		this.eventViewHeight = '400px';
 		this.segmentLength = 10;
 		this.container = '#timeline-container';

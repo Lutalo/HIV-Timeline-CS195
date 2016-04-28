@@ -1,6 +1,6 @@
 // Event Class
 
-function Event(id, dateString, category, string) {
+function Event(id, dateString, category, description, imgStringUrl) {
 
 	this.category = category;
 
@@ -8,9 +8,9 @@ function Event(id, dateString, category, string) {
 
 	this.date = new Date(dateString);
 
-	this.eventText = string;
+	this.eventText = description;
 
-	this.imgURI = '';
+	this.imgURI = imgStringUrl;
 
 	this.getId = function() {
 		return this.id; 

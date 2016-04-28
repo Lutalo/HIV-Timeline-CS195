@@ -8,13 +8,11 @@ events_path = os.path.join(BASE_DIR, 'events.db')
 db = SqliteDatabase(events_path)
 
 class Event(Model):
-	year = DateTimeField(default=0)
-	deaths = IntegerField(default=0)
-	health = TextField()
-	international = TextField()
-	political = TextField()
-	social = TextField()
-	celebrity = TextField()
+	date = DateTimeField(default=0)
+	category = TextField()
+	title = TextField()
+	photos = TextField()
+	description = TextField()
 
 	class Meta:
 		database = db
@@ -26,13 +24,11 @@ def initialize():
 
 def insertRow(dataList):
 	Event.create(
-		year = dataList[0],
-		deaths = int(dataList[1].replace(',', '')),
-		health = dataList[2],
-		international = dataList[3],
-		political = dataList[4],
-		social = dataList[5],
-		celebrity = dataList[6]
+		date = dataList[0],
+		category = dataList[1],
+		title = dataList[2],
+		photos = dataList[3],
+		description = dataList[4]
 		)
 
 def displayTable():
