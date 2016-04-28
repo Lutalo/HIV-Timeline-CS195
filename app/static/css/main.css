@@ -100,8 +100,46 @@ li {
 }
 
 #support-header-image {
-  background-position;
+  background-position: 50% 50%;
   background-image: url(../img/CommunitySupport.jpg);
+}
+
+#testing-header-image {
+  background-image: url(../img/Testing.jpg);
+  opacity: 0.90;
+}
+
+#hivinformation-header-image {
+  background-image: url(../img/HIVinformation.jpg);
+  background-position: 25% 45%;
+}
+
+#prevention-header-image {
+  /*get image*/
+}
+
+#videos-header-image {
+  background-image: url(../img/Videos.jpg);
+  background-position: 50% 50%;
+}
+
+#partners-header-image {
+  background-image: url(../img/Partners.jpg);
+  opacity: 0.75;
+}
+
+#advocacy-header-image {
+  background-image: url(../img/Advocacy.jpg);
+}
+
+#volunteer-header-image {
+  background-image: url(../img/Volunteering.jpg);
+  background-position: 50% 60%;
+}
+
+#classes-header-image {
+  background-image: url(../img/classes.jpg);
+  background-position: 50% 50%;
 }
 
 /*
