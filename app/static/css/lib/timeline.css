@@ -39,11 +39,40 @@
 .vertical-line {
 	position: relative;
 	width: 1px;
-	height: 5px;
-	display: inline;
+	height: 20px;
 	border-left: 2px solid black;
+	float: left;
 }
 
 .vertical-line, #timeline-container hr {
 	top: 0px;
+}
+
+/* Event Styles */
+.event {
+	position: relative;
+	top: -17px;
+	width: 22px;
+	height: 22px;
+	float: left;
+}
+
+.political {
+	background-image: url(../../img/icons/oval.png);
+}
+
+.celebrity {
+	background-image: url(../../img/icons/triangle.png);
+}
+
+.social {
+	background-image: url(../../img/icons/oval.png);
+}
+
+.health {
+	background-image: url(../../img/icons/triangle.png);
+}
+
+.international {
+	background-image: url(../../img/icons/oval.png);
 }
