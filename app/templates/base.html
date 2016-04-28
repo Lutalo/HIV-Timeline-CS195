@@ -85,18 +85,14 @@
                   </li>
 
                   <li>
-                    <!-- Define search form -->
-                    <form class="navbar-form navbar-left" role="search">
-                      <!-- Create your entire search form -->
-                      <div id='search-form' class="form-group">
-                        <div class="input-group">
-                          <span id='search-icon' class="input-group-addon"><span class='glyphicon glyphicon-search'></span></span>
-                          <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                      </div>
-                      <!-- Define a button to toggle the search area -->
-                      <button id='search-button' class='btn btn-default '><span class='glyphicon glyphicon-search'></span></button>
+                    <form action="" class="search-form">
+                      <div class="form-group has-feedback">
+                    		<label for="search" class="sr-only">Search</label>
+                    		<input type="text" class="form-control" name="search" id="search" placeholder="search">
+                    		<span class="glyphicon glyphicon-search form-control-feedback"></span>
+                    	</div>
                     </form>
+
                   </li>
 
                 </ul>
@@ -106,16 +102,6 @@
           </nav>
             <script type="text/javascript">
               navHighlight();
-
-              // Search bar
-              // when page loads
-              $(function() {
-                // when toggle areas are clicked, toggle them
-                $("search-button, #search-icon").click(function(e) {
-                  e.preventDefault();
-                  $("search-button, #search-icon").toggle();
-                });
-              });
             </script>
 
           <!-- Header Block End -->
