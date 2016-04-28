@@ -50,6 +50,7 @@ li {
 .main-img {
     height: 400px;
     width: 100%;
+    background-size: cover; 
 }
 
 .heading {
@@ -64,15 +65,12 @@ li {
   margin-bottom: -35px;
 }
 
-<<<<<<< HEAD
 .heading-text h1 {
   color: rgba(255, 255, 255, 1);
   padding-top: 10px;
   padding-left: 90px;
 }
 
-=======
->>>>>>> origin/master
 .partner {
   margin-bottom: 30px;
 }
@@ -172,6 +170,7 @@ li {
 
 #footer .share {
   margin-top: 8px;
+  margin-right: 10px;
   width: 70%;
   position: absolute;
   right: 0px;
