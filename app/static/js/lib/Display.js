@@ -131,6 +131,8 @@ function Display(TimelineObject, optionsObject) {
 		var newAttr = {};
 		var segmL = this.displayOptions.segmentLength;
 		var line = $(this.timelineContiner);
+		var eventElement = $('#timeline div.event').last();
+		var Event = this.Timeline.getId(eventElement.attr('id') - segmL);
 		var eventStyles = {
 			left: 0		
 		};
