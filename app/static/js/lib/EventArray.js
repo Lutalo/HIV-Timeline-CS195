@@ -1,17 +1,17 @@
 function EventArray() {
 
-	this.eventsArray = [];
+	this.eventsArray = [null];
 
-	this.firstEventInt = 0; 
+	this.firstEventInt = 1; 
 
-	this.currentEventInt = -1;
+	this.currentEventInt = 0;
 
 	this.getName = function() {
 		return this.name; 
 	}
 
 	this.numOfEvents = function() {
-		return this.eventsArray.length; 
+		return this.eventsArray.length-1; 
 	}
 
 	this.addEvent = function(id, date, category, description, imgUrl) {
@@ -36,14 +36,16 @@ function EventArray() {
 	}
 
 	this.nextEvent = function() {
-		this.currentEventInt++;
+		this.currentEventInt = this.currentEventInt + 1;
 		if (this.currentEventInt >= this.numOfEvents())
 			this.currentEventInt = this.firstEventInt; 
 		return this.eventsArray[this.currentEventInt]; 
 	}
 
 	this.prevEvent = function() {
-		this.currentEventInt--;
+		this.currentEventInt = this.currentEventInt - 1;
+		if (this.currentEventInt == 0)
+			this.currentEventInt = this.numOfEvents(); 
 		return this.eventsArray[this.currentEventInt]; 
 	}	
 
@@ -52,8 +54,16 @@ function EventArray() {
 	}
 
 	this.getId = function(id) {
-		id = parseInt(id) - 1; 
-		return this.eventsArray[id]; 
+		id = parseInt(id);
+		if (id == 0)
+			return this.prevEvent();
+		else if (id > this.numOfEvents)
+			return this.nextEvent()
+		else {
+			this.currentEventInt = id; 
+			return this.eventsArray[id]; 
+		}
+		
 	}
 	
 }

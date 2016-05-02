@@ -20,12 +20,12 @@ for (var i = 0; i < timelineArray.length; i++) {
 	Timeline.addEvent(id, date, category, description, photos);
 }
 
-Timeline.sortEvents(Timeline.getArray(), 0, Timeline.numOfEvents()-1);
+// Timeline.sortEvents(Timeline.getArray(), 0, Timeline.numOfEvents()-1);
 
 Display.drawContainer();
 Display.drawEventViewer();
 Display.drawSegment();
-Display.drawEvents(); 
+Display.drawEvents(Timeline.firstEvent()); 
 
 function getCategory(string) {
 	if (string == 'International Information')
@@ -37,5 +37,5 @@ function getCategory(string) {
 	else if (string == 'Social Activism')
 		return 'social';
 	else if (string == 'Celebrities and AIDS')
-		return 'celebrities';
+		return 'celebrity';
 }

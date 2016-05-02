@@ -65,9 +65,12 @@ function Display(TimelineObject, optionsObject) {
 		});
 	}
 
-	this.drawEvents = function() {
+	// Draws events in order from the firstEvent up to the segment
+	// length defined in the display options.
+	// @param firstEvent: The event to begin from. 
+	this.drawEvents = function(firstEvent) {
 		var lineRule; 
-		var Event = this.Timeline.currentEvent();
+		var Event = firstEvent;
 		var segmL = this.displayOptions.segmentLength;
 		var line = $(this.timelineContiner);
 		var eventElement;
@@ -95,11 +98,59 @@ function Display(TimelineObject, optionsObject) {
 	}
 
 	this.nextSegment = function() {
+		var lineRule;
+		var newAttr = {};
+		var Event = this.Timeline.currentEvent();
+		var segmL = this.displayOptions.segmentLength;
+		var line = $(this.timelineContiner);
+		var eventElement = $('#timeline div.event').first();
+		var eventStyles = {
+			left: 0		
+		};
+		
+		for (var i = 0; i < segmL; i++) {
+			newAttr = {
+				id: Event.getId(),
+				class: Event.getType() + ' event'
+			}
+			eventElement.attr(newAttr);
+			eventElement = eventElement.next(); 
+			Event = this.Timeline.nextEvent(); 
+		}
 
+		lineRule = (line.outerWidth() / (segmL + 1));
+
+		$.each($('#timeline div.event'), function() {
+			eventStyles.left = (eventStyles.left + lineRule); 
+			$(this).css(eventStyles);	
+		});
 	}
 
 	this.prevSegment = function() {
+		var lineRule;
+		var newAttr = {};
+		var segmL = this.displayOptions.segmentLength;
+		var line = $(this.timelineContiner);
+		var eventStyles = {
+			left: 0		
+		};
+		
+		for (var i = 0; i < segmL; i++) {
+			newAttr = {
+				id: Event.getId(),
+				class: Event.getType() + ' event'
+			}
+			eventElement.attr(newAttr);
+			eventElement = eventElement.prev(); 
+			Event = this.Timeline.prevEvent(); 
+		}
 
+		lineRule = (line.outerWidth() / (segmL + 1));
+
+		$.each($('#timeline div.event'), function() {
+			eventStyles.left = (eventStyles.left + lineRule); 
+			$(this).css(eventStyles);	
+		});
 	}
 
 	function setOptions() {
