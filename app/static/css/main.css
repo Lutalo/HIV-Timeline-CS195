@@ -34,7 +34,29 @@ li {
 }
 
 .container {
+  /*min-height: 1024px;*/
   margin: 0px 60px 60px 60px;
+}
+
+.content {
+  width: 401px;
+}
+
+.content h4 {
+  font-size: 16px;
+}
+
+/*
+*  ============================================================================
+*
+*  Navigation Bar
+*
+*  ============================================================================
+*/
+
+.navbar {
+  height: 60px;
+  margin-bottom: 0px;
 }
 
 .container-navbar {
@@ -42,13 +64,12 @@ li {
   color: #4B90E0;
 }
 
-/*bootstrap override*/
-.navbar {
-  margin-bottom: 0px;
+.navbar-brand img {
+  margin-top: -10px;
 }
 
 .main-img {
-    height: 400px;
+    height: 427px;
     width: 100%;
     background-size: cover;
 }
@@ -59,16 +80,18 @@ li {
 
 .heading-text {
   background: rgba(74, 144, 226, 0.5);
-  padding-bottom: 10px;
   position: relative;
-  bottom: 89px;
+  bottom: 75px;
   margin-bottom: -35px;
+  width: 100%;
+  height: 55px;
 }
 
 .heading-text h1 {
   color: rgba(255, 255, 255, 1);
   padding-top: 10px;
   padding-left: 90px;
+  font-size: 30px;
 }
 
 /*
@@ -81,6 +104,22 @@ li {
 
 .partner {
   margin-bottom: 30px;
+  word-wrap: break-word;
+}
+
+.button-wrap {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.button-link {
+  width: 99px;
+  height: 38px;
+  padding-top: 8px;
+  border: none;
+  border-radius: 11px;
+  background-color: #4a90e2;
+  color: white;
 }
 
 .prevention .content {
@@ -185,25 +224,25 @@ li {
 */
 
 #footer {
+  height: 40px;
   background: #4B90E0;
   color: #fff;
-  padding-bottom: 30px;
 }
 
 #footer div {
   display: inline-block;
 }
 
-#footer .footer-nav, #footer ul {
-  list-style-type: none;
-  margin-top: 10px;
+#footer .footer-nav {
   position: relative;
-  left:0px;
+  left: 0px;
   text-transform: uppercase;
+  padding-top: 10px;
 }
 
 #footer .footer-nav li {
-  margin-top: 8px;
+  display: inline;
+  margin-right: 45px;
 }
 
 #footer .footer-nav a {
@@ -212,24 +251,21 @@ li {
 }
 
 #footer .share {
-  margin-top: 8px;
-  margin-right: 10px;
   width: 70%;
   position: absolute;
   right: 0px;
   text-align: right;
-  overflow:auto;
-  padding: 10px 20px 0 0;
+  overflow: auto;
+  margin-right: 25px;
 }
 
-/*
-*  ============================================================================
-*
-*  Share icons
-*
-*  ============================================================================
-*/
+.share p {
+  padding-top: 5px;
+  margin-top: -19px;
+  font-size: 10px;
+}
 
 .share-icons li {
   display: inline;
+  font-size: 11px;
 }
