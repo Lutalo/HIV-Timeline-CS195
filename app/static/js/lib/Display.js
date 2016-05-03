@@ -97,7 +97,7 @@ function Display(TimelineObject, optionsObject, controlObject) {
 	}
 
 	this.nextEvent = function() {
-		clearSegment(); 
+		
 	}
 
 	this.prevEvent = function() {
@@ -105,7 +105,7 @@ function Display(TimelineObject, optionsObject, controlObject) {
 	}
 
 	this.nextSegment = function() {
-
+		clearSegment(); 
 		this.drawEvents(this.Timeline.currentEvent()); 
 	}
 
