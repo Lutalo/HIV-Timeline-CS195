@@ -17,6 +17,12 @@ for (var i = 0; i < timelineArray.length; i++) {
 	title = timelineArray[i].title
 	photos = timelineArray[i].photos
 	description = timelineArray[i].description
+	if (date.length == 4) {
+		randMonth = getRandomArbitrary(1, 12);
+		date = date + '-' + randMonth + '-1';
+		// console.log(date); 
+	}
+		 
 	Timeline.addEvent(id, date, category, description, photos);
 }
 
@@ -38,4 +44,8 @@ function getCategory(string) {
 		return 'social';
 	else if (string == 'Celebrities and AIDS')
 		return 'celebrity';
+}
+
+function getRandomArbitrary(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
 }

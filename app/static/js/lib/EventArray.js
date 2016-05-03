@@ -37,7 +37,7 @@ function EventArray() {
 
 	this.nextEvent = function() {
 		this.currentEventInt = this.currentEventInt + 1;
-		if (this.currentEventInt >= this.numOfEvents())
+		if (this.currentEventInt > this.numOfEvents())
 			this.currentEventInt = this.firstEventInt; 
 		return this.eventsArray[this.currentEventInt]; 
 	}
