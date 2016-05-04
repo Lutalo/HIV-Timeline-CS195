@@ -15,7 +15,6 @@
 /* Container Styles */
 #event-viewer-container, #timeline-container {
 	position: relative;
-	width: 1080px;
 	margin: 0 auto;
 	background-color: #EDEDED;
 }
@@ -23,8 +22,6 @@
 #event-viewer {
 	border-left: 0.5px solid black; 
 }
-
-
 
 /*Line Segment*/
 #timeline-container hr {
@@ -49,6 +46,15 @@
 	top: 0px;
 }
 
+/* Control Styles */
+#next-button {
+	background-image: url(../../img/icons/arrow.right.years.png);
+}
+
+#prev-button {
+	background-image: url(../../img/icons/arrow.left.years.png);
+}
+
 /* Event Styles */
 .event {
 	position: absolute;
@@ -58,22 +64,30 @@
 	float: left;
 }
 
+.oldEvent {
+	position: absolute;
+	top: -17px;
+	width: 22px;
+	height: 22px;
+	float: left;
+}
+
 .political {
-	background-image: url(../../img/icons/oval.png);
+	background-image: url(../../img/icons/Circle.timeline.png);
 }
 
 .celebrity {
-	background-image: url(../../img/icons/triangle.png);
+	background-image: url(../../img/icons/Square.timeline.png);
 }
 
 .social {
-	background-image: url(../../img/icons/oval.png);
+	background-image: url(../../img/icons/Triangle.timeline.png);
 }
 
 .health {
-	background-image: url(../../img/icons/triangle.png);
+	background-image: url(../../img/icons/Pentagon.timeline.png);
 }
 
 .international {
-	background-image: url(../../img/icons/oval.png);
+	background-image: url(../../img/icons/Hexagon.timeline.png);
 }
