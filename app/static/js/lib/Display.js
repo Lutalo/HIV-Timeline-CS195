@@ -78,21 +78,21 @@ function Display(TimelineObject, optionsObject, controlObject) {
 	// @param startEvent: The event to begin from. 
 	this.drawEvents = function(startEvent, direction) {
 		var Event = startEvent;
+		var year = Event.getDate().getFullYear(); 
 		var eventsL = eventsLength(that, Event)
 		var line = $(this.timelineContiner);
+		var vLine = $(this.contaier + ' div.vertical-line').first();
+		var firstRule = this.displayOptions.firstRulePos;
 		var eventElementString, thisElement;
-		var eventStyles = {
-			left: 0	
-		};
+		var eventStyles = {left: 0};
 
 		if (direction == 'next') 
-			eventStyles.left = parseInt(this.displayOptions.width) + 100;
-		if (direction == 'prev')
-			eventStyles.left = -100; 
-
-		console.log(eventStyles.left); 
-
-		$('#timeline div.oldEvent').animate({left: eventStyles.left*-1}, 1000, function() {
+			eventStyles.left = parseInt(this.displayOptions.width);
+		if (direction == 'prev') {
+			eventStyles.left = firstRule * -1;
+		}
+			
+		$('#timeline div.oldEvent').animate({left: eventStyles.left*-1, opacity: 0}, 1000, function() {
 			$('#timeline div.oldEvent').remove();
 		});
 
@@ -104,10 +104,18 @@ function Display(TimelineObject, optionsObject, controlObject) {
 				eventStyles.left = findPosition(that, Event);
 				thisElement.css(eventStyles);
 			} else {
+				// eventStyles.left = eventStyles.left*-1; 
 				thisElement.css(eventStyles);
-				thisElement.animate({left: findPosition(that, Event)}, 1000);
+				thisElement.animate({left: findPosition(that, Event), opacity: 1}, 1000);
 			}
 
+			if (Event.getDate().getFullYear() > year) {
+				console.log(year);
+				year = Event.getDate().getFullYear()
+				vLine.append('<p class="rule-text">' + year + '</p>');
+				vLine.next(); 
+			}
+		
 			Event = this.Timeline.nextEvent();
 		}
 
@@ -210,6 +218,7 @@ function Display(TimelineObject, optionsObject, controlObject) {
 		this.eventViewWidth = this.width;
 		this.eventViewHeight = '400px';
 		this.segmentLength = 10;
+		this.firstRulePos = parseInt(this.width) / this.segmentLength; 
 		this.container = '#timeline-container';
 		this.timelineContiner = '#timeline';
 		this.eventViewContainer = '#event-viewer-container'; 
