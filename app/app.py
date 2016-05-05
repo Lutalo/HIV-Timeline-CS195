@@ -42,12 +42,8 @@ def partners(title='Community Partners'):
 def advocacy(title='Get Involved | Advocacy'):
 	return render_template("advocacy.html", title=title)
 
-@app.route('/volunteer')
-def volunteer(title='Get Involved | Volunteer'):
-	return render_template("volunteer.html", title=title)
-
 @app.route('/classes')
-def classes(title='Get Involved | Classes'):
+def classes(title='Classes'):
 	return render_template("classes.html", title=title)
 
 if __name__ == '__main__':
