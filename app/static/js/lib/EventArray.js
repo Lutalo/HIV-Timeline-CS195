@@ -47,6 +47,20 @@ function EventArray() {
 		if (this.currentEventInt == 0)
 			this.currentEventInt = this.numOfEvents(); 
 		return this.eventsArray[this.currentEventInt]; 
+	}
+
+	this.isLast = function() {
+		if (this.currentEventInt == this.numOfEvents())
+			return true;
+		else
+			return false; 
+	}
+
+	this.isFirst = function() {
+		if (this.currentEventInt == this.firstEventInt)
+			return true;
+		else 
+			return false; 
 	}	
 
 	this.getArray = function() {

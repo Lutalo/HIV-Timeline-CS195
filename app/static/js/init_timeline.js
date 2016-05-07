@@ -27,11 +27,11 @@ for (var i = 0; i < timelineArray.length; i++) {
 }
 
 // Timeline.sortEvents(Timeline.getArray(), 0, Timeline.numOfEvents()-1);
-
+Timeline.firstEvent()
 Display.drawContainer();
 Display.drawEventViewer();
 Display.drawSegment();
-Display.drawEvents(Timeline.firstEvent()); 
+Display.drawEvents(); 
 
 function getCategory(string) {
 	if (string == 'International Information')
