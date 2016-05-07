@@ -40,3 +40,9 @@ function navHighlight()
         //  console.log("hit else statement");
     }
 }
+
+$(document).ready(function() {
+    $('iframe').remove()
+    $('#google_translate_element').prev().remove(); 
+    $('#google_translate_element').remove(); 
+});

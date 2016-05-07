@@ -31,15 +31,15 @@ function Display(TimelineObject, optionsObject, controlObject) {
 	}
 
 	this.drawEventViewer = function() {
-		var newElement; 
+		var newElement;
 		var styles = {
 	      width: this.Options.eventViewWidth,
 	      height: this.Options.eventViewHeight
 	    };
 
 	    this.eventViewContainer = $(this.eventViewContainer).append('<div id="event-viewer"></div>');
-	    newElement = $('#event-viewer');
 	    this.eventViewContainer.css({width: styles.width}); 
+	    newElement = $('#event-viewer');
 		newElement.css(styles);
 		this.Control.drawNextButton();
 		this.Control.drawPrevButton(); 
@@ -92,10 +92,6 @@ function Display(TimelineObject, optionsObject, controlObject) {
 
 		drawText(); 
 
-		$('#timeline div.event').click(function() {
-			drawEventView(this.id);  
-		});
-
 		function drawText() {
 			var temp, year, newText, newDeath, lineHeight;
 			var	viewHeight = that.Options.eventViewHeight; 
@@ -133,14 +129,11 @@ function Display(TimelineObject, optionsObject, controlObject) {
 				}		
 			}
 
-			function deathText(year) {
-				if (Deaths[year] != null) {
-					newDeath = '<div style="height: 0px; top: 0" class="death-text">';
-					newDeath += '<p>' + Deaths[year] + '</p></div>';
-					return newDeath;
-				} else return false; 
-			}
 		}
+
+		$('#timeline div.event').click(function() {
+			drawEventView(this.id); 
+		});
 	}
 
 	this.nextEvent = function() {
@@ -233,8 +226,20 @@ function Display(TimelineObject, optionsObject, controlObject) {
 	}
 
 	function drawEventView(id) {
+		var eventView;
+		var eventViewString = '<div id="event-view"></div>';
 		var Event = this.Timeline.getId(id);
-		alert(Event.getText()); 	
+		eventView = $(eventViewString).appendTo('#event-viewer'); 
+		eventView.append('<p>' + Event.getDate() +  '</p>');
+		eventView.append('<p>' + Event.getType() +  '</p>');
+		eventView.append('<p>' + Event.getText() +  '</p>');
+		that.Control.drawCloseButton(); 
+		hideDeathText(); 
+	}
+
+	function removeEventView() {
+		eventView = $('#event-view').remove(); 
+		showDeathText(); 
 	}
 
 	function clearSegment() {
@@ -245,6 +250,24 @@ function Display(TimelineObject, optionsObject, controlObject) {
 			amountLeft = parseInt($(this).css('left'));
 			$(this).addClass('oldEvent').removeClass('event');
 		});
+
+		removeEventView();
+	}
+
+	function deathText(year) {
+		if (Deaths[year] != null) {
+			newDeath = '<div style="height: 0px; top: 0" class="death-text">';
+			newDeath += '<p>' + Deaths[year] + '</p></div>';
+			return newDeath;
+		} else return false; 
+	}
+
+	function hideDeathText() {
+		$('.death-text').hide(500);
+	}
+
+	function showDeathText() {
+		$('.death-text').show(500);
 	}
 
 	function findPosition(that, Event) {
@@ -289,11 +312,32 @@ function Display(TimelineObject, optionsObject, controlObject) {
 	function Control(display) {
 		
 		this.filterContainer = '#filter-container';
+		this.closeEventView = '#close-button'; 
 		this.nextButton = '#next-button';
 		this.prevButton = '#prev-button';
+
+		this.drawCloseButton = function() {
+			var eventView = '#event-view';
+			var newElement = '<div id="close-button"></div>';
+			var closeStyles = {
+				position: 'absolute',
+				width: '30px',
+				height: '20px',
+				top: '10px',
+				right: '20px',
+				background: 'red'
+			};
+			
+			$(eventView).append(newElement); 
+			$(this.closeEventView).css(closeStyles);
+			$(this.closeEventView).click(function() {
+				removeEventView(); 
+			});
+
+		}
 		
 		this.drawNextButton = function() {
-			var eventView = display.eventViewContainer
+			var eventView = that.eventViewContainer
 			var newElement = '<div id="next-button"></div>';
 			var nextStyles = {
 				position: 'absolute',
@@ -306,13 +350,13 @@ function Display(TimelineObject, optionsObject, controlObject) {
 			$(eventView).append(newElement); 
 			$(this.nextButton).css(nextStyles);
 			$(this.nextButton).click(function() {
-				display.drawEvents('next'); 
+				that.drawEvents('next'); 
 			});
 
 		}
 
 		this.drawPrevButton = function() {
-			var eventView = display.eventViewContainer
+			var eventView = that.eventViewContainer
 			var newElement = '<div id="prev-button"></div>';
 			var prevStyles = {
 				position: 'absolute',
@@ -325,7 +369,7 @@ function Display(TimelineObject, optionsObject, controlObject) {
 			$(eventView).append(newElement); 
 			$(this.prevButton).css(prevStyles);
 			$(this.prevButton).click(function() {
-				display.drawEvents('prev'); 
+				that.drawEvents('prev'); 
 			});
 		}
 
