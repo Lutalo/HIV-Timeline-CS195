@@ -21,15 +21,6 @@ ul {
 *  ============================================================================
 */
 
-.timeline-events {
-  border: 2px solid #4B90E0;
-  box-sizing: border-box;
-  border-radius: 11px;
-  /* top | right | bottom | left */
-  margin-bottom: 10px;
-  margin-left: 15%;
-}
-
 .container {
   /*min-height: 1024px;*/
   width: 1140px;
@@ -39,10 +30,40 @@ ul {
 
 .content {
   width: 40%;
+  margin-bottom: 30px;
 }
 
 .content h4 {
   font-size: 16px;
+}
+
+.timeline-events-container {
+  width: 30%;
+  margin-bottom: 10px;
+}
+
+.timeline-events {
+  border: 2px solid #4B90E0;
+  box-sizing: border-box;
+  border-radius: 11px;
+  /* top | right | bottom | left */
+  margin-bottom: 10px;
+  padding: 5px 10px 5px 11px;
+}
+
+/*hide centerBlock class at breakpoint*/
+.centerBlock {
+  display: table;
+  margin: 0 auto;
+}
+
+.more-services {
+  margin: 0px 0px 10px 35px;
+}
+
+.right-section {
+  margin-left: 14%;
+  display: inline-block;
 }
 
 /*
@@ -74,9 +95,9 @@ ul {
     background-size: cover;
 }
 
-.heading {
+/*.heading {
   margin-bottom: 20px;
-}
+}*/
 
 .heading-text {
   background: rgba(74, 144, 226, 0.5);
@@ -147,15 +168,6 @@ ul {
   margin-bottom: 30px;
 }
 
-.right-section {
-  margin-left: 14%;
-  display: inline-block;
-}
-
-.more-services {
-  margin-bottom: 20px;
-}
-
 .brochure {
   width: 49%;
   height: auto;
@@ -179,7 +191,9 @@ ul {
 * ============================================================================
 */
 
-
+.videos .content {
+  width: 50%;
+}
 
 /*
 * ============================================================================
